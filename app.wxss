@@ -1,0 +1,6 @@
+/* 全局样式 */
+page {
+  background: #f5f6f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: #333;
+}

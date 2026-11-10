@@ -1,0 +1,12 @@
+// payCallback 云函数 package.json
+{
+  "name": "pay-callback",
+  "version": "1.0.0",
+  "description": "微信支付成功回调：验签 → 落库 → 触发官方分账给推荐人",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "axios": "^1.6.0",
+    "crypto-js": "^4.2.0"
+  }
+}

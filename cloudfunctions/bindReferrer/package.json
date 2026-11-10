@@ -1,0 +1,10 @@
+// bindReferrer 云函数 package.json
+{
+  "name": "bind-referrer",
+  "version": "1.0.0",
+  "description": "扫码绑定推荐人（首次进入小程序时）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

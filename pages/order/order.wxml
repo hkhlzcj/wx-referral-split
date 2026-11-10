@@ -1,0 +1,59 @@
+<!--
+  下单页 - 商品 + 金额 + 推荐人 → 发起支付
+-->
+<view class="page">
+  <view class="page__header">创建订单</view>
+
+  <!-- 商品名 -->
+  <view class="form-item">
+    <view class="form-item__label">商品名称</view>
+    <input
+      class="form-item__input"
+      placeholder="例如：会员月卡"
+      value="{{goodsName}}"
+      bindinput="onGoodsInput"
+    />
+  </view>
+
+  <!-- 金额（元） -->
+  <view class="form-item">
+    <view class="form-item__label">金额（元）</view>
+    <view class="amount-wrap">
+      <text class="amount-wrap__symbol">¥</text>
+      <input
+        class="amount-wrap__input"
+        type="digit"
+        placeholder="0.00"
+        value="{{amountYuan}}"
+        bindinput="onAmountInput"
+      />
+      <text class="amount-wrap__hint" wx:if="{{amountFen > 0}}">{{amountFen / 100}} 元</text>
+    </view>
+  </view>
+
+  <!-- 推荐人（正常走首页绑定，这里可手填邀请码兜底） -->
+  <view class="form-item">
+    <view class="form-item__label">推荐人推荐码（可选）</view>
+    <input
+      class="form-item__input"
+      placeholder="留空 = 自然流量"
+      value="{{inviteCode}}"
+      bindinput="onInviterInput"
+    />
+  </view>
+
+  <!-- 分账提示 -->
+  <view class="tip" wx:if="{{amountFen > 0 && inviteCode}}">
+    该单将按 10% 分账给推荐人，约 {{Math.floor(amountFen * 0.10) / 100}} 元
+  </view>
+
+  <!-- 提交 -->
+  <button class="btn" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitOrder">
+    提交并支付
+  </button>
+
+  <!-- 最近订单 -->
+  <view class="last-order" wx:if="{{lastOrderNo}}">
+    最近订单号：<text class="last-order__no">{{lastOrderNo}}</text>
+  </view>
+</view>

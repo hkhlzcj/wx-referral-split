@@ -1,0 +1,54 @@
+<!--
+  佣金页 - 我的分账流水
+-->
+<view class="page">
+  <view class="page__header">我的佣金</view>
+
+  <!-- 汇总卡片 -->
+  <view class="summary">
+    <view class="summary__item">
+      <text class="summary__num">￥{{totalSuccess / 100}}</text>
+      <text class="summary__label">累计到账</text>
+    </view>
+    <view class="summary__item">
+      <text class="summary__num pending">￥{{totalPending / 100}}</text>
+      <text class="summary__label">分账中</text>
+    </view>
+    <view class="summary__item">
+      <text class="summary__num {{failedCount ? 'danger' : ''}}">{{failedCount}}</text>
+      <text class="summary__label">异常笔数</text>
+    </view>
+  </view>
+
+  <!-- 推荐码 -->
+  <view class="invite" wx:if="{{inviteCode}}">
+    <text class="invite__label">我的推荐码</text>
+    <text class="invite__code">{{inviteCode}}</text>
+  </view>
+
+  <!-- 加载态 -->
+  <view wx:if="{{loading}}" class="loading-box">加载中…</view>
+
+  <!-- 流水列表 -->
+  <block wx:elif="{{logs.length > 0}}">
+    <view class="list">
+      <view class="log-item" wx:for="{{logs}}" wx:key="_id">
+        <view class="log-item__left">
+          <text class="log-item__goods">{{item.goodsName || item.orderNo}}</text>
+          <text class="log-item__time">{{item.timeText}}</text>
+        </view>
+        <view class="log-item__right">
+          <text class="log-item__amount">+￥{{item.amountYuan}}</text>
+          <text class="log-item__status status--{{item.status}}">{{item.statusText}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 空态 -->
+  <view wx:else class="empty">
+    <text class="empty__title">还没有佣金记录</text>
+    <text class="empty__sub">分享你的推荐码，让朋友下单即可获得分账</text>
+    <button class="share-btn" open-type="share">分享给好友</button>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+// createOrder 云函数 package.json
+{
+  "name": "create-order",
+  "version": "1.0.0",
+  "description": "创建订单：生成业务订单号 + 计算分账金额 + 调微信支付统一下单",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "crypto-js": "^4.2.0",
+    "axios": "^1.6.0"
+  }
+}

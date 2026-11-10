@@ -1,0 +1,7 @@
+// payCallback 云函数配置
+// 说明：这个函数要暴露成 HTTPS 触发器，供微信支付回调
+{
+  "permissions": {
+    "openid": true
+  }
+}

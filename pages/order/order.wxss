@@ -1,0 +1,92 @@
+/* 下单页样式 */
+.page {
+  padding: 24rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #f5f6f8;
+}
+.page__header {
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-bottom: 24rpx;
+}
+
+/* 表单项 */
+.form-item {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+.form-item__label {
+  font-size: 26rpx;
+  color: #888;
+  margin-bottom: 12rpx;
+}
+.form-item__input {
+  font-size: 30rpx;
+  color: #333;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+
+/* 金额行 */
+.amount-wrap {
+  display: flex;
+  align-items: center;
+}
+.amount-wrap__symbol {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #07c160;
+  margin-right: 12rpx;
+}
+.amount-wrap__input {
+  flex: 1;
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #333;
+}
+.amount-wrap__hint {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 16rpx;
+}
+
+/* 提示 */
+.tip {
+  background: #fff7e6;
+  color: #d48806;
+  font-size: 24rpx;
+  padding: 16rpx 20rpx;
+  border-radius: 12rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 提交按钮 */
+.btn {
+  width: 100%;
+  padding: 24rpx 0;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #fff;
+  background: #07c160;
+  border-radius: 12rpx;
+  border: none;
+}
+.btn[disabled] {
+  background: #a8e6c3;
+  color: #fff;
+}
+
+/* 最近订单 */
+.last-order {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: #888;
+  text-align: center;
+}
+.last-order__no {
+  color: #07c160;
+  font-weight: 600;
+}

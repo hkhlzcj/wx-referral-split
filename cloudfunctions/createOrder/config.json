@@ -1,0 +1,8 @@
+// createOrder 云函数配置
+// 说明：微信云开发云函数不需要像自建服务器那样配路由，
+// 支付回调走的是 payCallback 的 HTTP 触发器，这里保持默认即可。
+{
+  "permissions": {
+    "openid": true
+  }
+}

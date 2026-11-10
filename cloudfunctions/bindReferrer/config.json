@@ -1,0 +1,6 @@
+// bindReferrer 云函数配置
+{
+  "permissions": {
+    "openid": true
+  }
+}

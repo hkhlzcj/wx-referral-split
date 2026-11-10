@@ -1,0 +1,40 @@
+<!--
+  首页 - 落地页
+  展示：绑定状态、推荐人、专属推荐码、入口按钮
+-->
+<view class="page">
+  <!-- 顶部品牌区 -->
+  <view class="hero">
+    <view class="hero__title">推荐 · 分账小程序</view>
+    <view class="hero__sub">官方分账合规 · 你推荐我下单，自动分佣</view>
+  </view>
+
+  <!-- 加载态 -->
+  <view wx:if="{{loading}}" class="loading-box">
+    <text>正在绑定推荐关系…</text>
+  </view>
+
+  <!-- 绑定结果卡片 -->
+  <view wx:else class="card">
+    <view class="card__row">
+      <text class="label">推荐人</text>
+      <text class="value" wx:if="{{bound}}">{{inviterOpenid}}</text>
+      <text class="value muted" wx:else>暂无（自然流量）</text>
+    </view>
+    <view class="card__row" wx:if="{{bindMsg}}">
+      <text class="label">状态</text>
+      <text class="value">{{bindMsg}}</text>
+    </view>
+  </view>
+
+  <!-- 我的推荐码（用于分享给别人） -->
+  <view class="card">
+    <view class="card__title">我的专属推荐码</view>
+    <view class="invite-box" bindtap="copyInviteCode">
+      <text class="invite-code">{{inviteCode || "进入即生成，点我复制"}}</text>
+    </view>
+    <button class="btn btn--primary" bindtap="goOrder">去下单</button>
+    <button class="btn btn--ghost" bindtap="goCommission">查看佣金</button>
+    <button class="btn btn--share" open-type="share">分享给好友</button>
+  </view>
+</view>
